@@ -25,4 +25,4 @@ jobs:
         with:
           context: ./python-app
           push: true
-          tags: <DEIN_DOCKERHUB_USERNAME>/python-demo:latest
+          tags: mucker67/python-demo:latest
