@@ -1,1 +1,20 @@
-image: mucker67/python-demo:1.0
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-demo
+  template:
+    metadata:
+      labels:
+        app: python-demo
+    spec:
+      containers:
+        - name: python-demo
+          image: mucker67/python-demo:latest
+          ports:
+            - containerPort: 5000
