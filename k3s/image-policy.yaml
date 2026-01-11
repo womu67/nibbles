@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: python-demo-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: python-demo
+  policy:
+    alphabetical:
+      order: asc
