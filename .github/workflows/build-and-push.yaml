@@ -1,9 +1,10 @@
-name: Build and Push Docker Image
+name: Build and Push Python App
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+    paths:
+      - "python-app/**"
 
 jobs:
   build:
@@ -22,5 +23,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
+          context: ./python-app
+          file: ./python-app/Dockerfile
           push: true
           tags: mucker67/python-demo:latest
+
