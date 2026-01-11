@@ -1,10 +1,9 @@
-name: Build and Push Python App
+name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ "main" ]
-    paths:
-      - "python-app/**"
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,9 +19,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push image
+      - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./python-app
           push: true
           tags: mucker67/python-demo:latest

@@ -1,25 +1,4 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository
-metadata:
-  name: python-demo
-  namespace: flux-system
-spec:
-  image: mucker67/python-demo
-  interval: 1m
----
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImagePolicy
-metadata:
-  name: python-demo-policy
-  namespace: flux-system
-spec:
-  imageRepositoryRef:
-    name: python-demo
-  policy:
-    semver:
-      range: ">=0.0.0"
----
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: python-demo-automation
@@ -35,11 +14,11 @@ spec:
         branch: main
     commit:
       author:
-        name: Flux Bot
+        name: Flux
         email: flux@example.com
-      messageTemplate: "Update image to {{ .NewImage }}"
+      messageTemplate: "Update image to {{ .ImageRef }}"
     push:
       branch: main
   update:
-    path: "./k3s"
+    path: ./k3s
     strategy: Setters

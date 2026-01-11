@@ -1,0 +1,7 @@
+resources:
+  - namespace.yaml
+  - python-deployment.yaml
+  - service.yaml
+  - image-repository.yaml
+  - image-policy.yaml
+  - image-automation.yaml
