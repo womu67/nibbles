@@ -26,5 +26,7 @@ jobs:
           context: ./python-app
           file: ./python-app/Dockerfile
           push: true
-          tags: mucker67/python-demo:latest
+          tags: |
+            mucker67/python-demo:latest
+            mucker67/python-demo:${{ github.sha }}
 
