@@ -28,5 +28,5 @@ jobs:
           push: true
           tags: |
             mucker67/python-demo:latest
-            mucker67/python-demo:${{ github.sha }}
+            mucker67/python-demo:build-${{ github.run_number }}
 
