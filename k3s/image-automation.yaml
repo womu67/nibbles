@@ -16,7 +16,7 @@ spec:
       author:
         name: Flux
         email: flux@example.com
-      messageTemplate: "Update image to {{ (index .Updated.Images 0).Tag }}"
+      messageTemplate: "Update image to {{ (index .Changed.Images 0).Tag }}"
     push:
       branch: main
   update:
