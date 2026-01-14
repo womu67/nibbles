@@ -4,8 +4,11 @@ metadata:
   name: python-demo-policy
   namespace: flux-system
 spec:
+  filterTags:
+    pattern: '^build-(?P<build>\d+)$'
+    extract: '$build'
+  policy:
+    numerical:
+      order: asc
   imageRepositoryRef:
     name: python-demo
-  policy:
-    alphabetical:
-      order: asc
