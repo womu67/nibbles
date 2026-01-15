@@ -16,6 +16,6 @@ spec:
       containers:
         - name: python-demo
           # {"image": "mucker67/python-demo"}
-          image: mucker67/python-demo:build-0
+          image: mucker67/python-demo:build-19
           ports:
             - containerPort: 5000
