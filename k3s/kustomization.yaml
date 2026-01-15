@@ -1,6 +1,6 @@
 resources:
   - namespace.yaml
-  - python-deployment.yaml
+  - deployment.yaml
   - service.yaml
   - image-repository.yaml
   - image-policy.yaml
