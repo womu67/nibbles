@@ -15,7 +15,6 @@ spec:
     spec:
       containers:
         - name: python-demo
-          # {"kustomize.setters.image": "mucker67/python-demo"}
-          image: mucker67/python-demo:build-27
+          image: mucker67/python-demo:build-27 # {"$imagepolicy": "flux-system:python-demo-policy"}
           ports:
             - containerPort: 5000
