@@ -1,11 +1,20 @@
 apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  name: python-demo
+  namespace: flux-system
+spec:
+  image: mucker67/python-demo
+  interval: 1m
+ImagePolicy
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
   name: python-demo-policy
   namespace: flux-system
 spec:
   filterTags:
-    pattern: '^build-(?P<build>\d+)$'
+    pattern: '^build-(?P<build>\\d+)$'
     extract: '$build'
   policy:
     numerical:
