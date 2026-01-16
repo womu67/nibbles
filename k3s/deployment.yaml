@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: python-demo
-          # {"image": "mucker67/python-demo"}
+          # {"kustomize.setters.image": "mucker67/python-demo"}
           image: mucker67/python-demo:build-1
           ports:
             - containerPort: 5000
