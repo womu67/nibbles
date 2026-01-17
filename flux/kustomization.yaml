@@ -1,0 +1,4 @@
+resources:
+  - ImagePolicy.yaml
+  - imageRepository.yaml
+  - ImageUpdateAutomation1.yaml
