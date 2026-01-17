@@ -4,4 +4,4 @@ resources:
   - service.yaml
   - ImagePolicy.yaml
   - imageRepository.yaml
-  - ImageUpdateAutomation1.yaml
+  - ImageUpdateAutomation.yaml
