@@ -9,6 +9,6 @@ spec:
     extract: '$build'
   policy:
     numerical:
-      order: asc
+      order: desc
   imageRepositoryRef:
     name: python-demo
