@@ -1,0 +1,23 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageUpdateAutomation
+metadata:
+  name: python-demo-automation
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: nibbles
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: Flux
+        email: flux@example.com
+    push:
+      branch: main
+  update:
+    path: ./k3s
+    strategy: Setters
