@@ -1,14 +1,13 @@
-apiVersion: image.toolkit.fluxcd.io/v1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: python-demo-policy
   namespace: flux-system
 spec:
-  filterTags:
-    pattern: '^build-[0-9]+$' # Einfacher Filter: Startet mit build-, gefolgt von Zahlen
-    extract: '$build'
-  policy:
-    numerical:
-      order: desc
   imageRepositoryRef:
     name: python-demo
+  policy:
+    numerical:
+      order: asc # asc bedeutet: die höchste Nummer gewinnt (z.B. 33 > 32)
+  filter:
+    pattern: '^build-(?P<tag>\d+)' # Sucht nach "build-" gefolgt von Zahlen
