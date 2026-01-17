@@ -10,4 +10,4 @@ spec:
     numerical:
       order: asc # asc bedeutet: die höchste Nummer gewinnt (z.B. 33 > 32)
   filter:
-    pattern: '^build-(?P<tag>\d+)' # Sucht nach "build-" gefolgt von Zahlen
+    pattern: '^build-(?P<tag>[0-9]+)$'
