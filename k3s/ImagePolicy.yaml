@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   filterTags:
-    pattern: '^build-(?P<build>\d+)$'
+    pattern: '^build-[0-9]+$' # Einfacher Filter: Startet mit build-, gefolgt von Zahlen
     extract: '$build'
   policy:
     numerical:
