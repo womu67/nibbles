@@ -1,7 +1,6 @@
 name: build-and-push
 
 on:
-on:
   push:
     branches: ["main"]
     # Verhindert, dass der Workflow bei Änderungen an den Deployment-Files startet
