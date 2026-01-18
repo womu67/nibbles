@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: python-demo
-          image: mucker67/python-demo:build-65 # {"$imagepolicy": "flux-system:python-demo-policy"}
+          image: mucker67/python-demo:build-66 # {"$imagepolicy": "flux-system:python-demo-policy"}
           ports:
             - containerPort: 5000
