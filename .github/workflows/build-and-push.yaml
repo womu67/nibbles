@@ -1,9 +1,12 @@
 name: build-and-push
 
 on:
+on:
   push:
     branches: ["main"]
-
+    # Verhindert, dass der Workflow bei Änderungen an den Deployment-Files startet
+    paths-ignore:
+      - 'k3s/**'       # Ignoriere alles im k3s Ordner (wo Flux die Tags ändert)
 jobs:
   docker:
     runs-on: ubuntu-latest
